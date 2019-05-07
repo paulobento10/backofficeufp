@@ -46,27 +46,36 @@ class EventsController extends Controller
         try {
 
             if ($request->has('nome')) {
-                $events = Events::where('nome', 'LIKE', "%{$request->nome}%");
+                $events = Events::where('nome_pt', 'LIKE', "%{$request->nome}%")
+                    ->orwhere('nome_en', 'LIKE', "%{$request->nome}%")
+                    ->orwhere('nome_outro', 'LIKE', "%{$request->nome}%");
+            }
+            if ($request->has('descricao')) {
+                $events = Events::where('descricao_pt', 'LIKE', "%{$request->descricao}%")
+                    ->orwhere('descricao_en', 'LIKE', "%{$request->descricao}%")
+                    ->orwhere('descricao_outro', 'LIKE', "%{$request->descricao}%");
+            }
+
+            if ($request->has('curso')) {
+                $events = Events::where('curso_pt', 'LIKE', "%{$request->curso}%")
+                    ->orwhere('curso_en', 'LIKE', "%{$request->curso}%")
+                    ->orwhere('curso_outro', 'LIKE', "%{$request->curso}%");
+            }
+
+            if ($request->has('categoria')) {
+                $events = Events::where('categoria_pt', 'LIKE', "%{$request->categoria}%")
+                    ->orwhere('categoria_en', 'LIKE', "%{$request->categoria}%")
+                    ->orwhere('categoria_outro', 'LIKE', "%{$request->categoria}%");
+            }
+
+            if ($request->has('faculdade')) {
+                $events = Events::where('faculdade_pt', 'LIKE', "%{$request->faculdade}%")
+                    ->orwhere('faculdade_en', 'LIKE', "%{$request->faculdade}%")
+                    ->orwhere('faculdade_outro', 'LIKE', "%{$request->faculdade}%");
             }
 
             if ($request->has('data')) {
                 $events = Events::where('data', 'LIKE', "%{$request->data}%");
-            }
-
-            if ($request->has('descricao')) {
-                $events = Events::where('descricao', 'LIKE', "%{$request->descricao}%");
-            }
-
-            if ($request->has('curso')) {
-                $events = Events::where('curso', 'LIKE', "%{$request->curso}%");
-            }
-
-            if ($request->has('categoria')) {
-                $events = Events::where('categoria', 'LIKE', "%{$request->categoria}%");
-            }
-
-            if ($request->has('faculdade')) {
-                $events = Events::where('faculdade', 'LIKE', "%{$request->faculdade}%");
             }
 
             $data = ['data' => $events->get()];
