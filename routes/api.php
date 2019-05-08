@@ -78,3 +78,8 @@ Route::namespace('API')->group(function() {
         Route::get('/', 'UsersController@search_query')->name('search_users');
     });
 });
+
+
+Route::post('/register', 'AuthController@register');
+Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout');
