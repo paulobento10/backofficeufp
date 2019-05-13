@@ -11,19 +11,40 @@ class Users extends Model implements JWTSubject
         'nome', 'password', 'curso', 'plano'
     ];
 
-    public function getJWTIdentifier()
+    public
+    function getJWTIdentifier()
     {
         return $this->getKey();
     }
 
-    public function getJWTCustomClaims()
+    public
+    function getJWTCustomClaims()
     {
         return [];
     }
-    public function setPasswordAttribute($password)
+
+    public
+    function setPasswordAttribute($password)
     {
-        if ( !empty($password) ) {
+        if (!empty($password)) {
             $this->attributes['password'] = bcrypt($password);
         }
     }
+}
+
+interface JWTSubject
+{
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier();
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims();
 }

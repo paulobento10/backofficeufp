@@ -37,12 +37,12 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'session',
+            'driver' => 'api',
             'provider' => 'users',
         ],
 
         'api' => [
-            'driver' => 'jwt', //token
+            'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],
