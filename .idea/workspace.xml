@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c6bc770-3936-44f7-8c0e-c20ad5f07051" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Sistemas_Redes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Sistemas_Redes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-    </list>
+    <list default="true" id="2c6bc770-3936-44f7-8c0e-c20ad5f07051" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="169" column="11" selection-start-line="169" selection-start-column="11" selection-end-line="170" selection-end-column="62" />
+            <state relative-caret-position="145">
+              <caret line="170" column="39" lean-forward="true" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
               <folding>
                 <element signature="e#7#41#0#PHP" expanded="true" />
               </folding>
@@ -98,11 +92,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="php artisan make:controller Api/NewsController" />
-      <command text="php artisan make:controller Api/EventsController" />
-      <command text="php artisan server" />
-      <command text="php artisan serve" />
-      <command text="php artisan server" />
       <command text="php artisan serve" />
       <command text=" php artisan make:controller Api/UsersController" />
       <command text=" php artisan serve" />
@@ -123,6 +112,11 @@
       <command text="composer require tymon/jwt-auth" />
       <command text="composer dump-autoload -o" />
       <command text="php artisan clear-compiled" />
+      <command text="php artisan package:discover --ansi" />
+      <command text="composer require tymon/jwt-auth:dev-develop --prefer-source" />
+      <command text="composer update" />
+      <command text="php artisan vendor:publish --provider=&quot;Tymon\JWTAuth\Providers\LaravelServiceProvider&quot;" />
+      <command text="php artisan jwt:secret" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -406,12 +400,12 @@
       <workItem from="1556145149856" duration="775000" />
       <workItem from="1556558646008" duration="459000" />
       <workItem from="1557242553831" duration="509000" />
-      <workItem from="1557767836222" duration="929000" />
+      <workItem from="1557767836222" duration="1668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50151000" />
+    <option name="totallyTimeSpent" value="50890000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,6 +418,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26222223" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -685,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="169" column="11" selection-start-line="169" selection-start-column="11" selection-end-line="170" selection-end-column="62" />
+        <state relative-caret-position="145">
+          <caret line="170" column="39" lean-forward="true" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
           <folding>
             <element signature="e#7#41#0#PHP" expanded="true" />
           </folding>
