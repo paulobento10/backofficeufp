@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -80,6 +78,9 @@ Route::namespace('API')->group(function() {
 });
 
 
-Route::post('/register', 'AuthController@register');
-Route::post('/login', 'AuthController@login');
-Route::post('/logout', 'AuthController@logout');
+Route::get('/register', 'Auth/AuthController@register');
+Route::get('/login', 'Auth/AuthController@login');
+Route::get('/logout', 'Auth/AuthController@logout');
+Route::get('/welcome', function(){
+    return view('welcome');
+});
