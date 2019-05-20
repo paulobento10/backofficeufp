@@ -1,5 +1,8 @@
 <?php
 
+use Tymon\JWTAuth\Facades\JWTAuth;
+use Tymon\JWTAuth\Providers\LaravelServiceProvider;
+
 return [
 
     /*
