@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a103f505b1d5007c9192ba24940fd128",
+    "content-hash": "422b0693d14b5901e43ced54470a6fde",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1422,7 +1422,6 @@
         },
         {
             "name": "nexmo/client",
-
             "version": "1.8.1",
             "source": {
                 "type": "git",
@@ -4756,7 +4755,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/64cb33f5b520da490a7b13149d39b43cf3c890c6",
                 "reference": "64cb33f5b520da490a7b13149d39b43cf3c890c6",
-
                 "shasum": ""
             },
             "require": {
@@ -5489,9 +5487,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "tymon/jwt-auth": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
