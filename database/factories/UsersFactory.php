@@ -1,7 +1,7 @@
 <?php
 
-use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use Faker\Generator as Faker;
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
@@ -12,6 +12,5 @@ $factory->define(App\User::class, function (Faker $faker) {
         'curso' => $faker->text,
         'plano' => $faker->text,
         'remember_token' => Str::random(10),
-
     ];
 });
