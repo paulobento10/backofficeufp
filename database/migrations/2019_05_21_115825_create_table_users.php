@@ -19,6 +19,8 @@ class CreateTableUsers extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('estado');
+            $table->string('notificacoes');
             $table->string('curso');
             $table->string('plano');
             $table->rememberToken();

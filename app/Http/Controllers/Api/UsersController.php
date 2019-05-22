@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\API\QueryBuilder;
 use App\API\ApiError;
-use App\Users;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,7 @@ class UsersController extends Controller
      */
     private $users;
 
-    public function __construct(Users $news)
+    public function __construct(User $news)
     {
         $this->users = $news;
     }
@@ -35,7 +35,7 @@ class UsersController extends Controller
         return response()->json($data);
     }
 
-    public function show_id(Users $id)
+    public function show_id(User $id)
     {
         $data = ['data' => $id];
 
@@ -47,15 +47,28 @@ class UsersController extends Controller
         try {
 
             if ($request->has('nome')) {
-                $users = Users::where('nome', 'LIKE', "%{$request->nome}%");
+                $users = User::where('nome', 'LIKE', "%{$request->nome}%");
             }
 
+            if ($request->has('email')) {
+                $users = User::where('email', 'LIKE', "%{$request->email}%");
+            }
+
+            if ($request->has('estado')) {
+                $users = User::where('estado', 'LIKE', "%{$request->estado}%");
+            }
+
+            if ($request->has('notificacoes')) {
+                $users = User::where('notificacoes', 'LIKE', "%{$request->notificacoes}%");
+            }
+
+
             if ($request->has('curso')) {
-                $users = Users::where('curso', 'LIKE', "%{$request->curso}%");
+                $users = User::where('curso', 'LIKE', "%{$request->curso}%");
             }
 
             if ($request->has('plano')) {
-                $users = Users::where('plano', 'LIKE', "%{$request->plano}%");
+                $users = User::where('plano', 'LIKE', "%{$request->plano}%");
             }
 
             $data = ['data' => $users->get()];
@@ -103,7 +116,7 @@ class UsersController extends Controller
         }
     }
 
-    public function delete(Users $id)
+    public function delete(User $id)
     {
         try {
             $id->delete();
@@ -117,4 +130,47 @@ class UsersController extends Controller
             }
         }
     }
+
+    public function updateStateNotice(Request $request, $id)
+    {
+        try {
+            if ($request->has('estado')) {
+                User::where('id', $id)->update(array('estado' => $request->estado));
+            }
+
+            if ($request->has('notificacoes')) {
+                User::where('id', $id)->update(array('notificacoes' => $request->notificacoes));
+            }
+
+            $return = ['data' => ['msg' => 'Utilizador Actualizado com Sucesso!']];
+            return responce()->json($return, 201);
+
+        } catch (\Excetion $e) {
+            if (config('app.debug')) {
+                return response()->json(ApiError::errorMessage('Houve um Error ao Actualizar Utilizador', 1014));
+            }
+        }
+    }
+
+    public function deleteStateNotice(Request $request, $id)
+    {
+        try {
+            if ($request->has('estado')) {
+                User::where('id', $id)->update(array('estado' => ''));
+            }
+
+            if ($request->has('notificacoes')) {
+                User::where('id', $id)->update(array('notificacoes' => ''));
+            }
+
+            $return = ['data' => ['msg' => 'Utilizador Actualizado com Sucesso!']];
+            return responce()->json($return, 201);
+
+        } catch (\Excetion $e) {
+            if (config('app.debug')) {
+                return response()->json(ApiError::errorMessage('Houve um Error ao Actualizar Utilizador', 1015));
+            }
+        }
+    }
+
 }
