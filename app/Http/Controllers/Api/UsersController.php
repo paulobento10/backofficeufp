@@ -152,6 +152,38 @@ class UsersController extends Controller
         }
     }
 
+    public function search_StateNotice(Request $request)
+    {
+        try {
+            if ($request->has('estado')) {
+                $users = User::where('estado', 'LIKE', "%{$request->estado}%");
+            }
+
+            if ($request->has('id') && $request->has('estado')) {
+                $users = User::where('estado', 'LIKE', "%{$request->estado}%")
+                ->andwhere('id', 'LIKE', "%{$request->id}%");
+            }
+
+            if ($request->has('notificacoes')) {
+                $users = User::where('notificacoes', 'LIKE', "%{$request->notificacoes}%");
+            }
+
+            if ($request->has('id') && $request->has('notificacoes')) {
+                $users = User::where('notificacoes', 'LIKE', "%{$request->notificacoes}%")
+                    ->andwhere('id', 'LIKE', "%{$request->id}%");;
+            }
+
+            $data = ['data' => $users->get()];
+
+            return response()->json($data);
+
+        } catch (\Excetion $e) {
+            if(config('app.debug')) {
+                return response()->json(ApiError::errorMessage('Houve um Error ao Pesquisar State Notice dos Utilizadores', 1015));
+            }
+        }
+    }
+
     public function deleteStateNotice(Request $request, $id)
     {
         try {

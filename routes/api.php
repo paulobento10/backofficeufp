@@ -81,6 +81,8 @@ Route::namespace('API')->group(function() {
     Route::prefix('users_StateNotice')->group(function () {
         Route::put('/{id}', 'UsersController@updateStateNotice')->name('updateStateNotice_users');
 
+        Route::get('/', 'UsersController@search_query')->name('search_StateNotice');
+
         Route::delete('/{id}', 'UsersController@deleteStateNotice')->name('deleteStateNotice_users');
     });
 });
